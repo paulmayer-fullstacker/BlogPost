@@ -8,16 +8,16 @@ Herewith my submission for Week-8's challenge: a full-stack 'Tech Blog' applicat
 
 ## The Solution:
 
-The solution comprises an Express server (backend), serving frontend files and providing a RESTful API managing the Blog (Posts and Comments). The server serves frontend files from a directory named 'public', making the frontend (HTML, CSS and JS files), directly accessible to clients. The server provides a set of API endpoints for performing CRUD (Create, Read, Update, Delete) operations on the Blog. The Blog data being persisted in a MySQL database. Communication requests, between fron and back end applications is managed using JSON Web Token (JWT) authentication.
+The solution comprises an Express server (backend), serving frontend files and providing a RESTful API managing the Blog (Posts and Comments). The server serves frontend files from a directory named 'public', making the frontend (HTML, CSS and JS files), directly accessible to clients. The server provides a set of API endpoints for performing CRUD (Create, Read, Update, Delete) operations on the Blog. The Blog data being persisted in a MySQL database. Communication requests, between frontend and backend applications is managed using JSON Web Token (JWT) authentication.
 
 ### Design Strategy
 
-The design of this application was largely dictated be the specification brief for the challenge. THe design decisions (on form and function), left to the author, will be discussed here.
+The design of this application was largely dictated be the specification brief for the challenge. The design decisions (on form and function), left to the author, will be discussed here.
 The development strategy that I envisaged for this project was an API-first, backend-driven, iterative approach. First defining what data structures and functionalities were to be exposed via an API. Then, building and testing the backend, and finally building and testing the user interface. Throughout the process, build and test in small, manageable sprints.
 
 #### Planning & Requirements (what and why):
 
-Defining Core Functionality (what the application should do) was largely defined within the challenge brief. Design decisions, to provision functionality, and sequensing are discussed here:
+Defining Core Functionality (what the application should do) was largely defined within the challenge brief. Design decisions, to provision functionality, and sequencing are discussed here:
 
 - Design the Data Model (Entities & Relationships):
 
@@ -27,7 +27,7 @@ Defining Core Functionality (what the application should do) was largely defined
 
 - Establish Relationships, by defining how entities relate to each other (i.e., one user has many posts, one post belongs to one category, one Post has many comments, one comment belongs to one user).
 
-This 'requirements' ata model naturally dictates our database schema and ORM models.
+This 'requirements' data model naturally dictates our database schema and ORM models.
 
 
 Define the API Endpoints:
@@ -92,13 +92,13 @@ The application provides a comprehensive set of API endpoints for managing users
 
 - POST /api/users - Registers a new user. The username, email, and password must be provided in the request body. Upon successful registration, a token is returned. Access: Public.
 
-- POST /api/users/login - Authenticates a user and loog them in. Request body must include valid email and password. Upon successful login, a token is returned for future authenticated requests. Access: Public.
+- POST /api/users/login - Authenticates a user and logs them in. Request body must include valid email and password. Upon successful login, a token is returned for future authenticated requests. Access: Public.
 
 - POST /api/users/logout - Handles user logout. For our JWT-based authentication, the token is discarded. The server returns a 204 No Content response.
 
 The solution source and test files have been judiciously commented, to provide in-line documentation. So, specific solution features and coding strategies will not be repeated here.
 
-The routes files (routes/category.js, comment-routes.js, post.js, user.js, and index.js) apply the frontend logic for the Blog Post application, using these endpoints. A test plan and procedure for the endpoits is given at blog_post_api_tests.http, within the root folder of this project. Unless specified, each API request requires JWT authentication (application of the Bearer: <token>. within the request body). Most endpoints require the user to be logged in (and possibly prove ownership). This application employs JSON Web Token (JWT) Authentication. JSON Web Token (JWT) authentication is new to the author. So, justicication/explanation is warranted here.
+The routes files (routes/category.js, comment-routes.js, post.js, user.js, and index.js) apply the frontend logic for the Blog Post application, using these endpoints. A test plan and procedure for the endpoints is given at blog_post_api_tests.http, within the root folder of this project. Unless specified, each API request requires JWT authentication (application of the Bearer: <token>. within the request body). Most endpoints require the user to be logged in (and possibly prove ownership). This application employs JSON Web Token (JWT) Authentication. JSON Web Token (JWT) authentication is new to the author. So, justification/explanation is warranted here.
 
 ---
 
@@ -127,9 +127,9 @@ Once the backend API was stable and thoroughly tested, I began building the user
 
 The installation strategy for a Node.js server involves using npm (Node Package Manager), as bundled with Node.js. The goal is to set up the project with all its external dependencies (like Express) correctly installed and managed. First, we need to install Node, per the operating system in question. See the official Node.js website for details: https://nodejs.org/. Our application uses Sequelize as an Object Relational Mapper (ORM), which supports various databases. We will need a database server installed and set up (this example employs MySQL).
 
-Having successfully installed MySQL and Node, we can go to install dependancies and configure the interfaces, within VSCode.
+Having successfully installed MySQL and Node, we can go to install credentials and configure the interfaces, within VSCode.
 
-Ensure that the database credentialls are loaded into the .env environmental file, within the project root directory. For our example, copy the `.env.example` file, renaming it `.env`, then update the environment variables (DB_PASSWORD={"YOUR DB PASSWORD HERE"}).
+Ensure that the database credentialss are loaded into the .env environmental file, within the project root directory. For our example, copy the `.env.example` file, renaming it `.env`, then update the environment variables (DB_PASSWORD={"YOUR DB PASSWORD HERE"}).
 
 | Procedure                                                            | Command                     |
 |:---------------------------------------------------------------------|:----------------------------|
@@ -138,7 +138,7 @@ Ensure that the database credentialls are loaded into the .env environmental fil
 | Quit out of MySQL                                                    |SQL> quit;                   |
 | Verify Node installed and accessible from our project file.          |$: node -v                   |
 | Initialise npm (creating package.json file).                         |$: npm init                  |
-| Install depandancies (creating node_modules and package-lock.json).  |$: npm install               |
+| Install depandencies (creating node_modules and package-lock.json).  |$: npm install               |
 | Seed the database with test data                                     |$: npm run seed              |
 | Run the application                                                  |$: npm start                 |
 |                                                                      |                             |
@@ -151,11 +151,11 @@ Based on our configuration files, the application frontend will now be accessibl
 
 ### GitHub:
 
-The source and depandency files have been pushed to my GitHub 'BlogPost' repository for public access at https://github.com/paulmayer-fullstacker/BlogPost. Before pushing to gitHub, a .gitignore file was created to exclude (ignore) the node_modules dependency directory and the environmental variable (.env file). The addition of this line in the .gitignore file 'node_modules/' causes git to ignore a node_modules directory, held within any subdirectory. The adition of a line containing '.env', will causes git to ignore a .env file, held within any subdirectory.
+The source and dependency files have been pushed to my GitHub 'BlogPost' repository for public access at https://github.com/paulmayer-fullstacker/BlogPost. Before pushing to gitHub, a .gitignore file was created to exclude (ignore) the node_modules dependency directory and the environmental variable (.env file). The addition of this line in the .gitignore file 'node_modules/' causes git to ignore a node_modules directory, held within any subdirectory. The addition of a line containing '.env', will causes git to ignore a .env file, held within any subdirectory.
 
 ### Render:
 
-It was intended to deploy the Tech Blog application to the Render hosting site, for public access. However, Render nolonger supports direct hosting of MySQL databases. Render does provide a fully managed PostgreSQL service, but this would require significant backend recoding, to accomodate the new SQL dialect. The author experimented with the option of deploying MySQL as a Private Service (SQL deployed to a Docker container hosted on GitHub) that React could access over the Internet. Unfortunately (discovered after much time and effort), React does not support Private Service access on its free tier. Deployment to Render was considered too arduouse, and was thus withdrawn from this submission.
+It was intended to deploy the Tech Blog application to the Render hosting site, for public access. However, Render no longer supports direct hosting of MySQL databases. Render does provide a fully managed PostgreSQL service, but this would require significant backend recoding, to accommodate the new SQL dialect. The author experimented with the option of deploying MySQL as a Private Service (SQL deployed to a Docker container hosted on GitHub) that React could access over the Internet. Unfortunately (discovered after much time and effort), React does not support Private Service access on its free tier. Deployment to Render was considered too arduous, and was thus withdrawn from this submission.
 
 ### YouTube:
 
