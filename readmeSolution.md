@@ -8,7 +8,7 @@ Herewith my submission for Week-8's challenge: a full-stack 'Tech Blog' applicat
 
 ## The Solution:
 
-The solution comprises an Express server (backend), serving static frontend files and providing a RESTful API managing the Blog (Posts and Comments). The server serves static files from a directory named 'public', making the frontend (HTML, CSS and JS files), directly accessible to clients. The server provides a set of API endpoints for performing CRUD (Create, Read, Update, Delete) operations on the Blog. The Blog data being persisted in a MySQL database. Communication requests, between fron and back end applications is managed using JSON Web Token (JWT) authentication.
+The solution comprises an Express server (backend), serving frontend files and providing a RESTful API managing the Blog (Posts and Comments). The server serves frontend files from a directory named 'public', making the frontend (HTML, CSS and JS files), directly accessible to clients. The server provides a set of API endpoints for performing CRUD (Create, Read, Update, Delete) operations on the Blog. The Blog data being persisted in a MySQL database. Communication requests, between fron and back end applications is managed using JSON Web Token (JWT) authentication.
 
 ### Design Strategy
 
