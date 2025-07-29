@@ -155,7 +155,11 @@ The source and depandency files have been pushed to my GitHub 'BlogPost' reposit
 
 ### Render:
 
-The project has also been deployed to the Render hosting site, for public access. The URL is https://week7-gauu.onrender.com/. It is recommended to use an incognito browser window to access the solution. The project has been hosted on a free tier of Render. So, after a few minutes of inactivity, the resources are shut down. Thus, on initial access, the service may take a few minutes to start
+It was intended to deploy the Tech Blog application to the Render hosting site, for public access. However, Render nolonger supports direct hosting of MySQL databases. Render does provide a fully managed PostgreSQL service, but this would require significant backend recoding, to accomodate the new SQL dialect. The author experimented with the option of deploying MySQL as a Private Service (SQL deployed to a Docker container hosted on GitHub) that React could access over the Internet. Unfortunately (discovered after much time and effort), React does not support Private Service access on its free tier. Deployment to Render was considered too arduouse, and was thus withdrawn from this submission.
+
+### YouTube:
+
+In lieu of the Render shortfall, a short video illustrating use of the Tech Blog application was uploaded to YouTube. The (unlisted) video can be viewed at: https://youtu.be/-A7fg039kEc
 
 ---
 
